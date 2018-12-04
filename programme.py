@@ -5,7 +5,7 @@ fenetre = Tk()
 photo = PhotoImage(file = "balle.png")
 # On dit de faire une toile de 500px de largeur et de 500px de hauteur
 canvas = Canvas(fenetre , width = 500 , height = 500)
-canvas.create_image(0 , 0 , anchor = NW , image = photo)
+canvas.create_image(250 , 250 , anchor = NW , image = photo)
 canvas.pack()
 
 
