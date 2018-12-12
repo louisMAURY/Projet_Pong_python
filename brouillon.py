@@ -8,4 +8,3 @@ label = Label(fenetre , text = "PONG !")
 bouton_depart = Button(fenetre , text = "C'est parti !" , command = spawn())
 label.pack()
 bouton_depart.pack()
-
