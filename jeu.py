@@ -102,15 +102,18 @@ class Joueur_droit:
 
 
 raq = Raquette(canvas , "white")
-jdroit = Joueur_droit(canvas , "red")
+jdroit = Joueur_droit(canvas , "white")
 balle = Ball(canvas , raq , jdroit , "white")
 
-while True:
-    if balle.sortie == False:
-        balle.dessiner()
-    fenetre.update_idletasks()
-    fenetre.update()
-    time.sleep(0.01)
+def game():
+    while True:
+        if balle.sortie == False:
+            balle.dessiner()
+        fenetre.update_idletasks()
+        fenetre.update()
+        time.sleep(0.01)
 
 
-fenetre.mainloop()
+    fenetre.mainloop()
+
+game()
