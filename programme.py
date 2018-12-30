@@ -41,8 +41,8 @@ class Ball:
     
     def heurter_joueur_droit(self , pos):
         pos_joueur_droit = self.canvas.coords(self.jdroit.id)
-        if pos[2] >= pos_joueur_droit[0] and pos[0] <= pos_joueur_droit[2]:
-            if pos[3] >= pos_joueur_droit[0] and pos[0] <= pos_joueur_droit[3]:
+        if pos[3] >= pos_joueur_droit[1] and pos[3] <= pos_joueur_droit[3]:
+            if pos[2] >= pos_joueur_droit[0] and pos[0] <= pos_joueur_droit[2]:
                 return True
         return False
 
@@ -73,8 +73,8 @@ class Raquette:
         self.canvas.move(self.id , 5 , hauteur/2-50)
         self.y = 0
         self.hauteur_canevas = self.canvas.winfo_height()
-        self.canvas.bind_all("<KeyPress-Up>" , self.vers_haut)
-        self.canvas.bind_all("<KeyPress-Down>" , self.vers_bas)
+        self.canvas.bind_all("<KeyPress-a>" , self.vers_haut)
+        self.canvas.bind_all("<KeyPress-q>" , self.vers_bas)
 
     def vers_haut(self , evt):
         self.canvas.move(self.id , 0 , -20)
