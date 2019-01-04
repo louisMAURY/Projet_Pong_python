@@ -12,6 +12,7 @@ hauteur = 500
 
 canvas = Canvas(fenetre , width = largeur , height = hauteur , bd = 0 , highlightthickness = 0 , bg = "black")
 
+titre = canvas.create_text(400 , 225 , text = "PONG" , fill = "white" , font = "impact")
 
 def affichage():
 # On demmande d'afficher une "toile" qui suivant plusieurs parametres
@@ -120,4 +121,9 @@ def game():
         fenetre.update()
         time.sleep(0.01)
 
-    fenetre.mainloop()
+
+bouton_jouer = Button(fenetre , text = "Jouer" , command = game ).pack(side = LEFT , padx = 4 , pady = 4)
+bouton_bonus = Button(fenetre , text = "Bonus")
+bouton_bonus.pack(side = RIGHT , padx = 4 , pady = 4)
+
+fenetre.mainloop()
