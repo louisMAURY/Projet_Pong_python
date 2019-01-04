@@ -122,8 +122,11 @@ def game():
         time.sleep(0.01)
 
 
-bouton_jouer = Button(fenetre , text = "Jouer" , command = game ).pack(side = LEFT , padx = 4 , pady = 4)
-bouton_bonus = Button(fenetre , text = "Bonus")
-bouton_bonus.pack(side = RIGHT , padx = 4 , pady = 4)
+def bonus():
+    pass
+
+
+bouton_jouer = Button(fenetre , text = "Jouer" , command = game ).pack(padx = 4 , pady = 4)
+bouton_bonus = Button(fenetre , text = "Bonus" , command = bonus).pack(padx = 4 , pady = 4)
 
 fenetre.mainloop()
