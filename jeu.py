@@ -10,10 +10,14 @@ fenetre.title("Pong")
 largeur = 800
 hauteur = 500
 
-# On demmande d'afficher une "toile" qui suivant plusieurs parametres
 canvas = Canvas(fenetre , width = largeur , height = hauteur , bd = 0 , highlightthickness = 0 , bg = "black")
-canvas.pack()
-fenetre.update()
+
+
+def affichage():
+# On demmande d'afficher une "toile" qui suivant plusieurs parametres
+    canvas.pack()
+    fenetre.update()
+
 
 start = [-1 , 1]
 random.shuffle(start)
@@ -21,6 +25,7 @@ random.shuffle(start)
 class Ball:
 
     def __init__(self , canvas , raq , jdroit , color):
+        affichage()
         self.canvas = canvas
         self.raq = raq
         self.jdroit = jdroit
@@ -48,6 +53,7 @@ class Ball:
 
     
     def dessiner(self):
+
         self.canvas.move(self.id , self.x , self.y)
         pos = self.canvas.coords(self.id)
         if pos[1] <= 0:
@@ -100,12 +106,13 @@ class Joueur_droit:
         self.canvas.move(self.id , 0 , 20)
 
 
-
 raq = Raquette(canvas , "white")
 jdroit = Joueur_droit(canvas , "white")
 balle = Ball(canvas , raq , jdroit , "white")
 
+
 def game():
+    affichage()
     while True:
         if balle.sortie == False:
             balle.dessiner()
@@ -113,7 +120,4 @@ def game():
         fenetre.update()
         time.sleep(0.01)
 
-
     fenetre.mainloop()
-
-game()
